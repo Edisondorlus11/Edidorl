@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez nos produits uniques imprimés avec Printify.">
+    <title>Nos Produits Printify</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4; /* Fond général plus doux */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #ff4d4d; /* Rouge brillant */
+            color: white;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Barre de recherche dans l'en-tête */
+        .search-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .search-container input {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 250px;
+            transition: width 0.3s ease;
+        }
+
+        .search-container input:focus {
+            outline: none;
+            border-color: #ff4d4d;
+            width: 300px; /* Augmenter la taille lors du focus */
+        }
+
+        .search-container button {
+            padding: 10px 15px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #ff1a1a;
+        }
+
+        .company-section {
+            padding: 40px 20px;
+            background-color: #ffcc00; /* Jaune brillant */
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .company-logo img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .company-section h2 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #333;
+        }
+
+        .company-section p {
+            font-size: 1.1em;
+            color: #333;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 10px;
+        }
+
+        .category-section {
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .category-section h3 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff4d4d; /* Rouge brillant pour le titre de chaque catégorie */
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            width: 200px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-card h2 {
+            font-size: 1.3em;
+            margin: 15px 0;
+            color: #ff4d4d; /* Rouge brillant pour les titres des produits */
+        }
+
+        .product-card p {
+            font-size: 1em;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .product-card a {
+            padding: 12px 25px;
+            background-color: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card a:hover {
+            background-color: #ff1a1a; /* Rouge plus foncé au survol */
+        }
+
+        .social-media {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcc00;
+        }
+
+        .social-media a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.8em;
+            margin: 0 15px;
+        }
+
+        .social-media a:hover {
+            color: #ff4d4d;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenue dans notre boutique Printify</h1>
+        <p>Découvrez des produits uniques et imprimés à la demande</p>
+        
+        <!-- Barre de recherche -->
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Rechercher des produits...">
+            <button onclick="searchProduct()">Rechercher</button>
+        </div>
+    </header>
+
+    <!-- Section de l'entreprise -->
+    <section class="company-section">
+        <div class="company-logo">
+            <img src="https://i.ibb.co/1fbK91S/logo.png" alt="Logo EdiDorl">
+        </div>
+        <div>
+            <h2>Bienvenue chez EdiDorl</h2>
+            <p>Chez EdiDorl, nous croyons en l'innovation et la qualité. Nous proposons une sélection de produits imprimés personnalisés pour vous permettre d'exprimer votre style unique. Chaque produit est conçu avec soin et imprimé sur demande via Printify, vous garantissant ainsi un produit unique et de qualité.</p>
+        </div>
+    </section>
+
+    <!-- Section Coques de téléphone -->
+    <section class="category-section">
+        <h3>Coques de Téléphone</h3>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="https://i.ibb.co/gDYSWHF/coque1.jpg" alt="Coque de téléphone Design Original">
+                <h2>Coque Design Original</h2>
+                <p>Protégez votre téléphone avec style grâce à nos coques personnalisées.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/xq8z2cv/coque2.jpg" alt="Coque de téléphone Personnalisée">
+                <h2>Coque Personnalisée</h2>
+                <p>Choisissez votre design et ajoutez-le à une coque de téléphone haute qualité.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/jgpm8H8/coque3.jpg" alt="Coque design élégant">
+                <h2>Coque Élégante</h2>
+                <p>Ajoutez une touche d'élégance à votre téléphone avec nos coques modernes.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/Fh88V2g/coque4.jpg" alt="Coque Vintage">
+                <h2>Coque Vintage</h2>
+                <p>Protégez votre téléphone avec un style rétro unique.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/x7P7rwG/coque5.jpg" alt="Coque Minimaliste">
+                <h2>Coque Minimaliste</h2>
+                <p>Optez pour un design simple et élégant avec notre coque minimaliste.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Vêtements -->
+    <section class="category-section">
+        <h3>Vêtements</h3>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="https://i.ibb.co/rZFS57s/woman-8257060.jpg" alt="Vêtements Design Original">
+                <h2>T-shirt Design Original</h2>
+                <p>T-shirt avec un design exclusif imprimé avec Printify.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/4f1gjTx/tshirt2.jpg" alt="T-shirt Design Personnalisé">
+                <h2>T-shirt Personnalisé</h2>
+                <p>Créez un T-shirt unique avec votre propre design.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/Y2V4f1H/tshirt3.jpg" alt="Sweat-shirt Personnalisé">
+                <h2>Sweat-shirt Personnalisé</h2>
+                <p>Un sweat-shirt unique, imprimé selon vos préférences.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/8z8YPmr/tshirt4.jpg" alt="T-shirt avec Message">
+                <h2>T-shirt avec Message</h2>
+                <p>Exprimez-vous avec un T-shirt portant un message inspirant.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/xsK2wTL/tshirt5.jpg" alt="T-shirt Graphique">
+                <h2>T-shirt Graphique</h2>
+                <p>Un T-shirt avec un design graphique moderne et vibrant.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Accessoires -->
+    <section class="category-section">
+        <h3>Accessoires</h3>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="https://i.ibb.co/y0fM9cH/accessoire1.jpg" alt="Sac en Toile">
+                <h2>Sac en Toile</h2>
+                <p>Sac écologique en toile avec un design unique.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/Xy2Z5H6/accessoire2.jpg" alt="Mug Personnalisé">
+                <h2>Mug Personnalisé</h2>
+                <p>Mug en céramique personnalisé avec votre message.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/xh9yqCz/accessoire3.jpg" alt="Casquette Personnalisée">
+                <h2>Casquette Personnalisée</h2>
+                <p>Ajoutez un logo ou un design à votre casquette.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/tZ2jdps/accessoire4.jpg" alt="Porte-clés Personnalisé">
+                <h2>Porte-clés Personnalisé</h2>
+                <p>Un porte-clés unique avec le design de votre choix.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/ZmCgrWV/accessoire5.jpg" alt="Bouteille Personnalisée">
+                <h2>Bouteille Personnalisée</h2>
+                <p>Restez hydraté avec une bouteille personnalisée.</p>
+                <a href="https://www.printify.com" target="_blank">Acheter maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Lien Instagram -->
+    <section class="social-media">
+        <h3>Suivez-nous sur Instagram</h3>
+        <a href="https://www.instagram.com/edidorl/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 60px; height: 60px;">
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ma Boutique Printify</p>
+    </footer>
+
+    <script>
+        // Fonction de recherche (à personnaliser pour votre site)
+        function searchProduct() {
+            var query = document.getElementById("search-bar").value;
+            alert("Vous recherchez: " + query);
+        }
+    </script>
+
+</body>
+</html>
+
+
+
